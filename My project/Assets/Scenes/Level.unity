@@ -229,6 +229,21 @@ MonoBehaviour:
   - time: 3
     laneIndex: 0
     isJumpable: 1
+  - time: 3
+    laneIndex: 2
+    isJumpable: 1
+  - time: 3.5
+    laneIndex: 1
+    isJumpable: 0
+  - time: 4
+    laneIndex: 0
+    isJumpable: 1
+  - time: 3
+    laneIndex: 0
+    isJumpable: 1
+  - time: 3
+    laneIndex: 0
+    isJumpable: 1
   jumpableObstaclePrefab: {fileID: 8506131142124445028, guid: 6ea144dc5d9ff4c4280af996f904cea2, type: 3}
   unjumpableObstaclePrefab: {fileID: 7863984566532692720, guid: 57dcfb5b080987c48a6dba950a5dcb53, type: 3}
 --- !u!1 &485033261
@@ -639,7 +654,7 @@ Transform:
   m_GameObject: {fileID: 1861011180}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 30}
+  m_LocalPosition: {x: 0, y: 2, z: 30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
