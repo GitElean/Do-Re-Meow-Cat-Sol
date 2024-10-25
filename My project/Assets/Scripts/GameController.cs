@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class GameController : MonoBehaviour
 {
     public static GameController instance;
@@ -29,10 +30,10 @@ public class GameController : MonoBehaviour
         lanes[2] = new Vector3(4f, 2f, 30f);
         lanes[3] = new Vector3(12f, 2f, 30f);
 
-        // Iniciar la rutina de generación de obstáculos
+        // No es necesario llamar a currentRoutine.StartRoutine() porque se ejecuta automáticamente
         if (currentRoutine != null)
         {
-            currentRoutine.StartRoutine();
+            // currentRoutine se encargará de iniciar la generación de obstáculos
         }
     }
 

@@ -2,49 +2,68 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-[System.Serializable]
-public class ObstacleBeat
-{
-    public float time;     // Tiempo en segundos para generar el obstáculo
-    public int laneIndex;  // El carril donde se genera el obstáculo
-    public bool isJumpable; // Si el obstáculo es saltable o no
-}
-
 public class ObstacleRoutine : MonoBehaviour
 {
-    public List<ObstacleBeat> obstacleBeats; // Lista de tiempos y tipos de obstáculos
-    private int currentBeatIndex = 0;
-    private float startTime;
+    public GameObject[] obstaclePrefabs; // Prefabs de los diferentes obstáculos
+    public int BPM = 120; // Velocidad de la canción en BPM
+    public float songDuration = 120f; // Duración de la canción en segundos
+    public int maxObstaclesPerRow = 2; // Máximo de obstáculos por fila (para evitar llenar todos los carriles)
 
-    // Referencias a los prefabs de obstáculos
-    public GameObject jumpableObstaclePrefab;
-    public GameObject unjumpableObstaclePrefab;
+    private float timePerBeat;
+    private int totalBeats;
 
-    public void StartRoutine()
+    void Start()
     {
-        startTime = Time.time;
-        StartCoroutine(RunRoutine());
+        // Calcular el tiempo entre beats basado en los BPM
+        timePerBeat = 60f / BPM;
+        totalBeats = Mathf.FloorToInt(songDuration / timePerBeat);
+
+        // Iniciar la rutina de generación de obstáculos
+        StartCoroutine(GenerateObstaclesRoutine());
     }
 
-    IEnumerator RunRoutine()
+    IEnumerator GenerateObstaclesRoutine()
     {
-        while (currentBeatIndex < obstacleBeats.Count)
+        for (int i = 0; i < totalBeats; i++)
         {
-            float beatTime = obstacleBeats[currentBeatIndex].time;
-            if (Time.time - startTime >= beatTime)
-            {
-                SpawnObstacle(obstacleBeats[currentBeatIndex]);
-                currentBeatIndex++;
-            }
-            yield return null;
+            GenerateObstacleRow(); // Generar una fila de obstáculos
+            yield return new WaitForSeconds(timePerBeat); // Esperar el tiempo entre beats
         }
     }
 
-    void SpawnObstacle(ObstacleBeat beat)
+    void GenerateObstacleRow()
     {
-        GameObject prefabToSpawn = beat.isJumpable ? jumpableObstaclePrefab : unjumpableObstaclePrefab;
-        Vector3 spawnPosition = new Vector3(GameController.instance.lanes[beat.laneIndex].x, 0f, GameController.instance.obstacleSpawnZ);
-        Instantiate(prefabToSpawn, spawnPosition, Quaternion.identity);
+        // Asegurarse de que los prefabs de obstáculos están asignados
+        if (obstaclePrefabs.Length == 0)
+        {
+            Debug.LogError("No hay prefabs de obstáculos disponibles para generar.");
+            return;
+        }
+
+        // Escoger cuántos obstáculos poner en esta fila (máximo 2)
+        int obstacleCount = Random.Range(1, maxObstaclesPerRow + 1);
+        List<int> usedLanes = new List<int>();
+
+        for (int i = 0; i < obstacleCount; i++)
+        {
+            // Seleccionar un carril al azar que no haya sido usado aún
+            int laneIndex;
+            do
+            {
+                laneIndex = Random.Range(0, GameController.instance.lanes.Length);  // Usar los carriles definidos en GameController
+            }
+            while (usedLanes.Contains(laneIndex)); // Evitar usar el mismo carril dos veces
+
+            usedLanes.Add(laneIndex);
+
+            // Seleccionar un obstáculo al azar (jumpable o notJumpable)
+            GameObject obstaclePrefab = obstaclePrefabs[Random.Range(0, obstaclePrefabs.Length)];
+
+            // Instanciar el obstáculo en la posición del carril desde el array lanes de GameController
+            Vector3 spawnPosition = GameController.instance.lanes[laneIndex]; // Usar las posiciones del array lanes del GameController
+            spawnPosition.z = GameController.instance.obstacleSpawnZ; // Ajustar la posición Z para que siempre spawneen adelante
+
+            Instantiate(obstaclePrefab, spawnPosition, Quaternion.identity);
+        }
     }
 }

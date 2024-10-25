@@ -3,7 +3,9 @@ guid: de782ab0530730045b9d8f2c557083c7
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - jumpableObstaclePrefab: {fileID: 8506131142124445028, guid: 6ea144dc5d9ff4c4280af996f904cea2, type: 3}
+  - unjumpableObstaclePrefab: {fileID: 7863984566532692720, guid: 57dcfb5b080987c48a6dba950a5dcb53, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

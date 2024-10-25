@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{b5f92f95-6389-4ebe-af43-6332c366a94d}">
+		<property name="assetPath">
+			<value>Songs/Akira 2.0 [Mastered - Rev #2].wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>129.67743764172334</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e28812c5-bce8-4310-88a3-a1712f030d8a}</destination>
+		</relationship>
+	</object>
+</objects>
