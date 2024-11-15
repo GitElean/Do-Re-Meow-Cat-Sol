@@ -92,23 +92,16 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        transform.position = Vector3.Lerp(transform.position, GameController.instance.lanes[currentLane], Time.deltaTime * moveSpeed);
-    }
-
-    void HandleJump()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
-        {
-            PlaySound(jumpSound); // Sonido de salto
-            StartCoroutine(Jump());
-        }
+        // Aquí permitimos el cambio en X sin importar si está en el aire
+        Vector3 targetPosition = new Vector3(GameController.instance.lanes[currentLane].x, transform.position.y, transform.position.z);
+        transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * moveSpeed);
     }
 
     IEnumerator Jump()
     {
         isJumping = true;
 
-        // Elevar al jugador
+        // Elevar al jugador en el eje Y solamente
         float elapsedTime = 0;
         Vector3 originalPosition = transform.position;
         Vector3 targetPosition = new Vector3(transform.position.x, transform.position.y + jumpHeight, transform.position.z);
@@ -120,7 +113,7 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
 
-        // Bajar al jugador
+        // Bajar al jugador en el eje Y solamente
         elapsedTime = 0;
         originalPosition = transform.position;  // Ahora la posición actual es el punto más alto
         targetPosition = new Vector3(transform.position.x, 0, transform.position.z);  // Volver a y=0
@@ -135,10 +128,20 @@ public class PlayerController : MonoBehaviour
         isJumping = false;
     }
 
+
     IEnumerator DashCooldown()
     {
         canDash = false;
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
+    }
+
+    void HandleJump()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
+        {
+            PlaySound(jumpSound); // Sonido de salto
+            StartCoroutine(Jump());
+        }
     }
 }

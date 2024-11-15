@@ -1,7 +1,9 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AudioManager
     - GameController
+    - GameManager
     - MenuManager
     - Obstacle
     - ObstacleRoutine
@@ -9,6 +11,39 @@ ScriptsOnlyBuild:
     - SceneLoader
     - SongSelectionManager
     - TitleScreen
+    FMODUnity:
+    - FMODUnity.PlatformAndroid
+    - FMODUnity.PlatformAppleTV
+    - FMODUnity.PlatformDefault
+    - FMODUnity.PlatformIOS
+    - FMODUnity.PlatformLinux
+    - FMODUnity.PlatformMac
+    - FMODUnity.PlatformMobileHigh
+    - FMODUnity.PlatformMobileLow
+    - FMODUnity.PlatformPlayInEditor
+    - FMODUnity.PlatformVisionOS
+    - FMODUnity.PlatformWebGL
+    - FMODUnity.PlatformWindows
+    - FMODUnity.Settings
+    FMODUnity.dll:
+    - FMODUnity.PlatformAndroid
+    - FMODUnity.PlatformAppleTV
+    - FMODUnity.PlatformDefault
+    - FMODUnity.PlatformIOS
+    - FMODUnity.PlatformLinux
+    - FMODUnity.PlatformMac
+    - FMODUnity.PlatformMobileHigh
+    - FMODUnity.PlatformMobileLow
+    - FMODUnity.PlatformPlayInEditor
+    - FMODUnity.PlatformVisionOS
+    - FMODUnity.PlatformWebGL
+    - FMODUnity.PlatformWindows
+    - FMODUnity.Settings
+    - FMODUnity.StudioListener
+    FMODUnityEditor.dll:
+    - FMODUnity.EditorBankRef
+    - FMODUnity.EditorEventRef
+    - FMODUnity.EventCache
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro:
@@ -45,8 +80,24 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.VerticalLayoutGroup
   serializedClasses:
     Assembly-CSharp:
-    - ObstacleBeat
     - Song
+    FMODUnity:
+    - FMOD.GUID
+    - FMODUnity.BankLoadType
+    - FMODUnity.EventReference
+    - FMODUnity.ImportType
+    - FMODUnity.Legacy/Platform
+    - FMODUnity.MeterChannelOrderingType
+    - FMODUnity.Platform/PropertyBool
+    - FMODUnity.Platform/PropertyCallbackHandler
+    - FMODUnity.Platform/PropertyCodecChannels
+    - FMODUnity.Platform/PropertyInt
+    - FMODUnity.Platform/PropertyScreenPosition
+    - FMODUnity.Platform/PropertySpeakerMode
+    - FMODUnity.Platform/PropertyStorage
+    - FMODUnity.Platform/PropertyString
+    - FMODUnity.Platform/PropertyStringList
+    - FMODUnity.Platform/PropertyThreadAffinityList
     Unity.TextMeshPro:
     - TMPro.FaceInfo_Legacy
     - TMPro.FontAssetCreationSettings
@@ -135,13 +186,19 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 2454}
+      Script: {instanceID: 1660}
     - Class: 114
-      Script: {instanceID: 4506}
+      Script: {instanceID: 2494}
     - Class: 114
-      Script: {instanceID: 4932}
+      Script: {instanceID: 2724}
     - Class: 114
-      Script: {instanceID: 5078}
+      Script: {instanceID: 4628}
+    - Class: 114
+      Script: {instanceID: 5070}
+    - Class: 114
+      Script: {instanceID: 5226}
+    - Class: 114
+      Script: {instanceID: 6644}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -163,8 +220,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 104
@@ -176,39 +231,67 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1604}
     - Class: 114
-      Script: {instanceID: 2188}
+      Script: {instanceID: 2216}
     - Class: 114
-      Script: {instanceID: 2364}
+      Script: {instanceID: 2396}
     - Class: 114
-      Script: {instanceID: 2612}
+      Script: {instanceID: 2656}
     - Class: 114
-      Script: {instanceID: 2816}
+      Script: {instanceID: 2724}
     - Class: 114
-      Script: {instanceID: 3856}
+      Script: {instanceID: 2866}
     - Class: 114
-      Script: {instanceID: 3976}
+      Script: {instanceID: 2870}
     - Class: 114
-      Script: {instanceID: 4082}
+      Script: {instanceID: 3118}
     - Class: 114
-      Script: {instanceID: 4094}
+      Script: {instanceID: 3708}
     - Class: 114
-      Script: {instanceID: 4336}
+      Script: {instanceID: 3952}
     - Class: 114
-      Script: {instanceID: 5046}
+      Script: {instanceID: 4076}
     - Class: 114
-      Script: {instanceID: 5580}
+      Script: {instanceID: 4184}
     - Class: 114
-      Script: {instanceID: 5600}
+      Script: {instanceID: 4196}
     - Class: 114
-      Script: {instanceID: 5752}
+      Script: {instanceID: 4268}
     - Class: 114
-      Script: {instanceID: 6068}
+      Script: {instanceID: 4456}
     - Class: 114
-      Script: {instanceID: 6472}
+      Script: {instanceID: 5140}
     - Class: 114
-      Script: {instanceID: 7112}
+      Script: {instanceID: 5190}
     - Class: 114
-      Script: {instanceID: 32484}
+      Script: {instanceID: 5364}
+    - Class: 114
+      Script: {instanceID: 5402}
+    - Class: 114
+      Script: {instanceID: 5612}
+    - Class: 114
+      Script: {instanceID: 5744}
+    - Class: 114
+      Script: {instanceID: 5766}
+    - Class: 114
+      Script: {instanceID: 5926}
+    - Class: 114
+      Script: {instanceID: 6258}
+    - Class: 114
+      Script: {instanceID: 6680}
+    - Class: 114
+      Script: {instanceID: 7050}
+    - Class: 114
+      Script: {instanceID: 7348}
+    - Class: 114
+      Script: {instanceID: 7716}
+    - Class: 114
+      Script: {instanceID: 7944}
+    - Class: 114
+      Script: {instanceID: 8020}
+    - Class: 114
+      Script: {instanceID: 8024}
+    - Class: 114
+      Script: {instanceID: 8108}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -250,6 +333,18 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Image
+  - hash:
+      serializedVersion: 2
+      Hash: b4dc2535dfb156d1d9ddfdc610633d69
+    assemblyName: FMODUnity
+    namespaceName: FMODUnity
+    className: StudioGlobalParameterTrigger
+  - hash:
+      serializedVersion: 2
+      Hash: 442b5323cb7e79ddb28fccf581a5d8b1
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: AudioManager
   - hash:
       serializedVersion: 2
       Hash: f45600bcc886206dd55a3208474aad61
@@ -304,6 +399,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
     className: SimpleScript
+  - hash:
+      serializedVersion: 2
+      Hash: 07eadb85fd28c8f0963bccff6eebc9d9
+    assemblyName: FMODUnity
+    namespaceName: FMODUnity
+    className: PlatformGroup
   - hash:
       serializedVersion: 2
       Hash: b12640dfdb5966813e9dd838893e6c4a
@@ -408,6 +509,12 @@ ScriptsOnlyBuild:
     className: UnityMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 493c34e2c8e610828a9d562abc611662
+    assemblyName: FMODUnity
+    namespaceName: FMODUnity
+    className: StudioListener
+  - hash:
+      serializedVersion: 2
       Hash: ed8bac09ffacadca9994789e381c69ce
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
@@ -424,6 +531,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner
     namespaceName: UnityEngine.TestRunner.Utils
     className: TestRunCallbackListener
+  - hash:
+      serializedVersion: 2
+      Hash: 567d5c500d06ba27701961aceb56aa2b
+    assemblyName: FMODUnity
+    namespaceName: FMODUnity
+    className: PlatformWebGL
   - hash:
       serializedVersion: 2
       Hash: 5a4aa2850fe11587f47e34c270c7fd22
@@ -478,6 +591,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
     className: VertexShakeA
+  - hash:
+      serializedVersion: 2
+      Hash: 0b2b4c58d4d83101276c83f120174c19
+    assemblyName: FMODUnity
+    namespaceName: FMODUnity
+    className: PlatformAppleTV
   - hash:
       serializedVersion: 2
       Hash: a1ac4c50e55874de16eee3db71aa9784
@@ -588,6 +707,12 @@ ScriptsOnlyBuild:
     className: UnityOnCollisionExit2DMessageListener
   - hash:
       serializedVersion: 2
+      Hash: aa3fdc529c024f3078799b259b2ebf6a
+    assemblyName: FMODUnity
+    namespaceName: FMODUnity
+    className: PlatformAndroid
+  - hash:
+      serializedVersion: 2
       Hash: 0a3f328f3ea906bbbcf794f4c27ee59d
     assemblyName: Unity.VisualScripting.Flow
     namespaceName: Unity.VisualScripting
@@ -616,6 +741,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: EnvMapAnimator
+  - hash:
+      serializedVersion: 2
+      Hash: ecb0a312941ef1bca9c957a150635711
+    assemblyName: FMODUnity
+    namespaceName: FMODUnity
+    className: FMODEventTrack
   - hash:
       serializedVersion: 2
       Hash: 665da785348a8806bf1524fe10742a60
@@ -702,10 +833,22 @@ ScriptsOnlyBuild:
     className: DictionaryAsset
   - hash:
       serializedVersion: 2
+      Hash: 97470fda4b11842ecad538a1fe40c896
+    assemblyName: FMODUnity
+    namespaceName: FMODUnity
+    className: PlatformVisionOS
+  - hash:
+      serializedVersion: 2
       Hash: e7e95903ca66d58e1a7cbd71f824e16d
     assemblyName: Unity.TextMeshPro
     namespaceName: TMPro
     className: TMP_SubMeshUI
+  - hash:
+      serializedVersion: 2
+      Hash: 84ce08004b747b6ad8ea085c908acdf6
+    assemblyName: FMODUnity
+    namespaceName: FMODUnity
+    className: FMODEventPlayable
   - hash:
       serializedVersion: 2
       Hash: 9078325c2a6f6a2d9612ade897511860
@@ -840,7 +983,7 @@ ScriptsOnlyBuild:
     className: Toggle
   - hash:
       serializedVersion: 2
-      Hash: 81d1ab73fc922dbddfac963ce5f64b9b
+      Hash: cbdc7d6be598a46313ffee6ab452bbce
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerController
@@ -862,6 +1005,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: HorizontalLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 81fdc3670d0c8143f1c4cb44004f41d1
+    assemblyName: FMODUnity
+    namespaceName: FMODUnity
+    className: PlatformMobileLow
   - hash:
       serializedVersion: 2
       Hash: 191cd500c627cd6682ef6f70b8e47f2c
@@ -888,7 +1037,7 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: edb2ca24ee0650016890ada283c1ded1
+      Hash: 03ea72edcbe959a0869882c1ce59a749
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: ObstacleRoutine
@@ -912,10 +1061,22 @@ ScriptsOnlyBuild:
     className: PanelEventHandler
   - hash:
       serializedVersion: 2
+      Hash: bc424b2a2d87ceeb0740af0a41a0d0ad
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SceneLoader
+  - hash:
+      serializedVersion: 2
       Hash: 9dd54ce33440072d6692a67e0c384ad1
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
     className: GroupTrack
+  - hash:
+      serializedVersion: 2
+      Hash: ebc6f356360feef7478b58f3722b91aa
+    assemblyName: FMODUnity
+    namespaceName: FMODUnity
+    className: PlatformIOS
   - hash:
       serializedVersion: 2
       Hash: bf0842d88681628b29beb00b5e2ab785
@@ -934,6 +1095,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.State
     namespaceName: Unity.VisualScripting
     className: StateGraphAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 92ea3a6aaa2f325c713e290a081756af
+    assemblyName: FMODUnity
+    namespaceName: FMODUnity
+    className: Settings
   - hash:
       serializedVersion: 2
       Hash: 35e0b31791c377513b6fc7b9568c50cd
@@ -970,6 +1137,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: AspectRatioFitter
+  - hash:
+      serializedVersion: 2
+      Hash: 2fea67f81714f9334deef4eec0349be4
+    assemblyName: FMODUnity
+    namespaceName: FMODUnity
+    className: StudioBankLoader
   - hash:
       serializedVersion: 2
       Hash: 9637dcdf3068a91dfe653e61bb82f13d
@@ -1038,6 +1211,12 @@ ScriptsOnlyBuild:
     className: TMP_FrameRateCounter
   - hash:
       serializedVersion: 2
+      Hash: e1678c9fc1fcd9856a0523a21f49dd8e
+    assemblyName: FMODUnity
+    namespaceName: FMODUnity
+    className: FMODRuntimeManagerOnGUIHelper
+  - hash:
+      serializedVersion: 2
       Hash: f669be52680c88846b2093fd41d1e06e
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1050,10 +1229,22 @@ ScriptsOnlyBuild:
     className: Outline
   - hash:
       serializedVersion: 2
+      Hash: adeecab503168be95ec520144aa044c9
+    assemblyName: FMODUnity
+    namespaceName: FMODUnity
+    className: RuntimeManager
+  - hash:
+      serializedVersion: 2
       Hash: 17142b03663387290480c82303274c02
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnPointerEnterMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 644de75af790cb941385047a267a72ad
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: GameManager
   - hash:
       serializedVersion: 2
       Hash: f2305da2400dfe6f069770a1a63f0f7c
@@ -1158,6 +1349,12 @@ ScriptsOnlyBuild:
     className: Dropdown
   - hash:
       serializedVersion: 2
+      Hash: 36b9fa78c1eb1a008490e8315f0fc306
+    assemblyName: FMODUnity
+    namespaceName: FMODUnity
+    className: PlatformWindows
+  - hash:
+      serializedVersion: 2
       Hash: e2734bcc7b3e94776ade5d59f54fec1e
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
@@ -1176,6 +1373,12 @@ ScriptsOnlyBuild:
     className: UnityOnMoveMessageListener
   - hash:
       serializedVersion: 2
+      Hash: 8bb0d3af17f4223ca2829ad85ae1b14f
+    assemblyName: FMODUnityResonance
+    namespaceName: FMODUnityResonance
+    className: FmodResonanceAudioRoom
+  - hash:
+      serializedVersion: 2
       Hash: d0392b7f3f52d5af537ade186b4f51f1
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
@@ -1186,6 +1389,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: ScrollRect
+  - hash:
+      serializedVersion: 2
+      Hash: d9698666aa0dfb0e7c080f1a48b32ea2
+    assemblyName: FMODUnity
+    namespaceName: FMODUnity
+    className: StudioParameterTrigger
   - hash:
       serializedVersion: 2
       Hash: 9a174471d4db2c0c6d3ac47d2f818db1
@@ -1230,6 +1439,12 @@ ScriptsOnlyBuild:
     className: VertexColorCycler
   - hash:
       serializedVersion: 2
+      Hash: e117a52fa418f021a2cdaade26aef54b
+    assemblyName: FMODUnity
+    namespaceName: FMODUnity
+    className: PlatformMac
+  - hash:
+      serializedVersion: 2
       Hash: 568292fb7ea6c4f7a667e5ff76bc7e85
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1254,6 +1469,18 @@ ScriptsOnlyBuild:
     className: VertexZoom
   - hash:
       serializedVersion: 2
+      Hash: a6d2425e75b99902b0469cd46a15c4ec
+    assemblyName: FMODUnity
+    namespaceName: FMODUnity
+    className: StudioEventEmitter
+  - hash:
+      serializedVersion: 2
+      Hash: 1321da384da11c7293f78e14c7a8112e
+    assemblyName: FMODUnity
+    namespaceName: FMODUnity
+    className: PlatformPlayInEditor
+  - hash:
+      serializedVersion: 2
       Hash: ff76cf6cf52b4db7b95af6ffadca9288
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
@@ -1264,6 +1491,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnToggleValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: d3a38bfe17da11737de5e5f5e2f745b8
+    assemblyName: FMODUnity
+    namespaceName: FMODUnity
+    className: PlatformDefault
+  - hash:
+      serializedVersion: 2
+      Hash: bd7c2d982e02a68c2763a005335ac117
+    assemblyName: FMODUnity
+    namespaceName: FMODUnity
+    className: PlatformLinux
   - hash:
       serializedVersion: 2
       Hash: 8bf800a764665b085fe469e8aea7f167
@@ -1284,6 +1523,12 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
+      Hash: 07deb96d3010db3644c2b887e9623c2b
+    assemblyName: FMODUnity
+    namespaceName: FMODUnity
+    className: PlatformMobileHigh
+  - hash:
+      serializedVersion: 2
       Hash: 00eef92bf387da2c9009267123d9d674
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1294,14 +1539,8 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: bc424b2a2d87ceeb0740af0a41a0d0ad
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: SceneLoader
   platform: 20
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Level.unity
-  playerPath: C:/Cosas/U/Juegos/Do-Re-Meow-Cat-Sol
+  playerPath: C:/Cosas/U/Juegos/doremeow builds/web

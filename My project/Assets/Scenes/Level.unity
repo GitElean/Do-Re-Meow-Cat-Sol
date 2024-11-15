@@ -223,7 +223,7 @@ MonoBehaviour:
   obstaclePrefabs:
   - {fileID: 8506131142124445028, guid: 6ea144dc5d9ff4c4280af996f904cea2, type: 3}
   - {fileID: 7863984566532692720, guid: 57dcfb5b080987c48a6dba950a5dcb53, type: 3}
-  BPM: 124
+  BPM: 64
   songDuration: 129
   maxObstaclesPerRow: 2
 --- !u!114 &339372772
@@ -670,7 +670,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!4 &1861011182
 Transform:
@@ -701,7 +701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 20
-  jumpHeight: 4
+  jumpHeight: 6
   jumpDuration: 1
   dashCooldown: 0.2
   lives: 3

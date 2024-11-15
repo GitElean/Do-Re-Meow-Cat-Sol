@@ -5,6 +5,12 @@
         "name": "Animation",
         "dependencies": [
           {
+            "name": "AnimationClip",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "Animator",
             "scenes": [],
             "dependencyType": 0,
@@ -23,10 +29,34 @@
             "icon": null
           },
           {
+            "name": "Avatar",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "AvatarMask",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "Motion",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "RuntimeAnimatorController",
             "scenes": [],
             "dependencyType": 1,
             "icon": null
+          },
+          {
+            "name": "Required by Director Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.director"
           }
         ]
       },
@@ -36,8 +66,7 @@
           {
             "name": "AudioBehaviour",
             "scenes": [
-              "Assets/Scenes/Level.unity",
-              "Assets/Scenes/MainMenu.unity"
+              "Assets/Scenes/Level.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -51,8 +80,7 @@
           {
             "name": "AudioListener",
             "scenes": [
-              "Assets/Scenes/Level.unity",
-              "Assets/Scenes/MainMenu.unity"
+              "Assets/Scenes/Level.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -68,6 +96,12 @@
             "scenes": [],
             "dependencyType": 1,
             "icon": null
+          },
+          {
+            "name": "Required by Director Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.director"
           }
         ]
       },
@@ -454,6 +488,12 @@
             "icon": "package/com.unity.modules.audio"
           },
           {
+            "name": "Required by Director Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.director"
+          },
+          {
             "name": "Required by IMGUI Module",
             "scenes": [],
             "dependencyType": 2,
@@ -478,10 +518,22 @@
             "icon": "package/com.unity.modules.physics"
           },
           {
+            "name": "Required by Physics2D Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.physics2d"
+          },
+          {
             "name": "Required by RuntimeInitializeOnLoadManagerInitializer Module",
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.runtimeinitializeonloadmanagerinitializer"
+          },
+          {
+            "name": "Required by TLS Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.tls"
           },
           {
             "name": "Required by TextCoreFontEngine Module",
@@ -514,10 +566,27 @@
             "icon": "package/com.unity.modules.uielements"
           },
           {
+            "name": "Required by UnityWebRequest Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.unitywebrequest"
+          },
+          {
             "name": "Required by WebGL Module",
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.webgl"
+          }
+        ]
+      },
+      {
+        "name": "Director",
+        "dependencies": [
+          {
+            "name": "PlayableDirector",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
           }
         ]
       },
@@ -600,6 +669,23 @@
         ]
       },
       {
+        "name": "Physics2D",
+        "dependencies": [
+          {
+            "name": "Physics2DSettings",
+            "scenes": [],
+            "dependencyType": 1,
+            "icon": null
+          },
+          {
+            "name": "Rigidbody2D",
+            "scenes": [],
+            "dependencyType": 0,
+            "icon": null
+          }
+        ]
+      },
+      {
         "name": "RuntimeInitializeOnLoadManagerInitializer",
         "dependencies": [
           {
@@ -632,6 +718,12 @@
             "icon": "package/com.unity.modules.core"
           },
           {
+            "name": "Required by Director Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.director"
+          },
+          {
             "name": "Required by IMGUI Module",
             "scenes": [],
             "dependencyType": 2,
@@ -656,10 +748,22 @@
             "icon": "package/com.unity.modules.physics"
           },
           {
+            "name": "Required by Physics2D Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.physics2d"
+          },
+          {
             "name": "Required by RuntimeInitializeOnLoadManagerInitializer Module",
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.runtimeinitializeonloadmanagerinitializer"
+          },
+          {
+            "name": "Required by TLS Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.tls"
           },
           {
             "name": "Required by TextCoreFontEngine Module",
@@ -692,10 +796,27 @@
             "icon": "package/com.unity.modules.uielements"
           },
           {
+            "name": "Required by UnityWebRequest Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.unitywebrequest"
+          },
+          {
             "name": "Required by WebGL Module",
             "scenes": [],
             "dependencyType": 2,
             "icon": "package/com.unity.modules.webgl"
+          }
+        ]
+      },
+      {
+        "name": "TLS",
+        "dependencies": [
+          {
+            "name": "Required by UnityWebRequest Module",
+            "scenes": [],
+            "dependencyType": 2,
+            "icon": "package/com.unity.modules.unitywebrequest"
           }
         ]
       },
@@ -817,6 +938,10 @@
       },
       {
         "name": "UIElements",
+        "dependencies": []
+      },
+      {
+        "name": "UnityWebRequest",
         "dependencies": []
       },
       {
