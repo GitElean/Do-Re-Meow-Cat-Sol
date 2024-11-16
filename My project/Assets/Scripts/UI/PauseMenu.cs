@@ -5,11 +5,14 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
-    public bool isPaused;
+    public GameObject deathMenu;
     void Start()
     {
+        
         pauseMenu.SetActive(false);
-        isPaused = false;
+        deathMenu.SetActive(false);
+        GameManager.instance.isPaused = false;
+        GameManager.instance.death = false;
     }
 
     // Update is called once per frame
@@ -17,7 +20,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isPaused)
+            if (GameManager.instance.isPaused)
             {
                 ResumeGame();
 
@@ -28,32 +31,37 @@ public class PauseMenu : MonoBehaviour
 
             }
         }
+
+        if (GameManager.instance.death)
+        {
+            deathMenu.SetActive(true);
+        }
     }
 
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
-        isPaused = true;
+        GameManager.instance.isPaused = true;
     }
 
+ 
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
-        isPaused = false;
+        GameManager.instance.isPaused = false;
     }
 
     public void RestartGame()
     {
-        
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         
     }
 
     public void QuitGame()
     {
-        ResumeGame();
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }

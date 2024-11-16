@@ -6,9 +6,10 @@ using FMODUnity;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-
-    [SerializeField] private EventReference levelSong; // Canción del nivel
-    public GameObject deathMenu;
+    public bool isPaused;
+    public bool death;
+    public EventReference levelSong; // Canción del nivel
+    // public GameObject deathMenu;
     public int lives = 3;
 
     
@@ -28,8 +29,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // Reproducir la canción al inicio del nivel
-        AudioManager.instance.PlaySong(levelSong);
-        deathMenu.SetActive(false);
+       
     }
 
     public void ReduceLife()
@@ -40,15 +40,15 @@ public class GameManager : MonoBehaviour
         if (lives == 1)
         {
             // Cambiar parámetro a música intensa
-            AudioManager.instance.SetMusicParameter("LifeState", 1f);
+            AudioManager.instance.SetMusicParameter("LifeState", 0f);
+            
         }
         else if (lives <= 0)
         {
             // Cambiar parámetro a música de horror
-            AudioManager.instance.SetMusicParameter("LifeState", 2f);
             Debug.Log("Game Over!");
-            deathMenu.SetActive(true);
             Time.timeScale = 0f; // Pausar el juego
+            death = true;
         }
     }
 }

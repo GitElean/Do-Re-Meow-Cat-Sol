@@ -29,6 +29,11 @@ public class AudioManager : MonoBehaviour
         RuntimeManager.PlayOneShot(sound, worldPos);
     }
 
+    void Start()
+    {
+        PlaySong(GameManager.instance.levelSong);
+    }
+
     public void PlaySong(EventReference songEvent)
     {
         if (musicInstance.isValid())

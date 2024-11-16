@@ -60,7 +60,9 @@ public class ObstacleRoutine : MonoBehaviour
             GameObject obstaclePrefab = obstaclePrefabs[Random.Range(0, obstaclePrefabs.Length)];
 
             // Instanciar el obstáculo en la posición del carril desde el array lanes de GameController
-            Vector3 spawnPosition = GameController.instance.lanes[laneIndex]; // Usar las posiciones del array lanes del GameController
+            Vector3 spawnPosition = GameController.instance.lanes[laneIndex];// Usar las posiciones del array lanes del GameController
+            Transform modelTransform = obstaclePrefab.transform.GetChild(0);
+            spawnPosition.y = modelTransform ? modelTransform.localScale.y / 2 : 0;
             spawnPosition.z = GameController.instance.obstacleSpawnZ; // Ajustar la posición Z para que siempre spawneen adelante
 
             Instantiate(obstaclePrefab, spawnPosition, Quaternion.identity);

@@ -205,7 +205,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 339372773}
+      - m_Target: {fileID: 1592101923}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -505,7 +505,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 339372773}
+      - m_Target: {fileID: 1592101923}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
@@ -567,7 +567,6 @@ GameObject:
   - component: {fileID: 339372770}
   - component: {fileID: 339372771}
   - component: {fileID: 339372772}
-  - component: {fileID: 339372773}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -624,7 +623,7 @@ MonoBehaviour:
   obstaclePrefabs:
   - {fileID: 8506131142124445028, guid: 6ea144dc5d9ff4c4280af996f904cea2, type: 3}
   - {fileID: 7863984566532692720, guid: 57dcfb5b080987c48a6dba950a5dcb53, type: 3}
-  BPM: 64
+  BPM: 80
   songDuration: 129
   maxObstaclesPerRow: 2
 --- !u!114 &339372772
@@ -639,29 +638,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 857b67bbe07b0184dbe06564947a10a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPaused: 0
   levelSong:
     Guid:
-      Data1: -1107416666
-      Data2: 1156138659
-      Data3: 557471904
-      Data4: 2075907824
-    Path: event:/Songs/AkiraSong
-  deathMenu: {fileID: 1209878159}
+      Data1: 1668629381
+      Data2: 1133525632
+      Data3: 877770638
+      Data4: -231241511
+    Path: event:/Songs/Lo Furr
   lives: 3
---- !u!114 &339372773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 339372768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c806c75ffcf11aa43b0836a151dae388, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 1857581593}
-  isPaused: 0
 --- !u!1 &485033261
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,7 +806,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 339372773}
+      - m_Target: {fileID: 1592101923}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
@@ -1394,7 +1379,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 339372773}
+      - m_Target: {fileID: 1592101923}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: RestartGame
         m_Mode: 1
@@ -1595,7 +1580,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1209878160
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1873,7 +1858,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 339372773}
+      - m_Target: {fileID: 1592101923}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -1935,6 +1920,7 @@ GameObject:
   - component: {fileID: 1592101921}
   - component: {fileID: 1592101920}
   - component: {fileID: 1592101919}
+  - component: {fileID: 1592101923}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2026,6 +2012,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1592101923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592101918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c806c75ffcf11aa43b0836a151dae388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 1857581593}
+  deathMenu: {fileID: 1209878159}
 --- !u!1 &1604646010
 GameObject:
   m_ObjectHideFlags: 0
@@ -2379,7 +2379,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1857581594
 RectTransform:
   m_ObjectHideFlags: 0
