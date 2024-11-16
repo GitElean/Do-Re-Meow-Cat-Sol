@@ -49,4 +49,12 @@ public class AudioManager : MonoBehaviour
             musicInstance.release();
         }
     }
+
+    public void SetMusicParameter(string parameterName, float value)
+    {
+        if (musicInstance.isValid())
+        {
+            musicInstance.setParameterByName(parameterName, value);
+        }
+    }
 }

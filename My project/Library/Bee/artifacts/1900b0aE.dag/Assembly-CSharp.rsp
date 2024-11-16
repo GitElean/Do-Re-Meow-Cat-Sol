@@ -366,6 +366,8 @@
 "Assets/Scripts/Obstacle.cs"
 "Assets/Scripts/ObstacleRoutine.cs"
 "Assets/Scripts/PlayerController.cs"
+"Assets/Scripts/UI/DeathMenu.cs"
+"Assets/Scripts/UI/PauseMenu.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs"

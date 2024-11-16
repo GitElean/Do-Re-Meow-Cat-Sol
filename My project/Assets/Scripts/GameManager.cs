@@ -8,13 +8,16 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     [SerializeField] private EventReference levelSong; // Canción del nivel
+    public GameObject deathMenu;
+    public int lives = 3;
 
+    
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);  // Mantener el GameManager entre escenas
+            DontDestroyOnLoad(gameObject); // Mantener el GameManager entre escenas
         }
         else
         {
@@ -26,7 +29,26 @@ public class GameManager : MonoBehaviour
     {
         // Reproducir la canción al inicio del nivel
         AudioManager.instance.PlaySong(levelSong);
+        deathMenu.SetActive(false);
     }
 
-    // Otros métodos globales pueden añadirse aquí, como manejar las vidas o puntuación
+    public void ReduceLife()
+    {
+        lives--;
+        Debug.Log("Vidas restantes: " + lives);
+
+        if (lives == 1)
+        {
+            // Cambiar parámetro a música intensa
+            AudioManager.instance.SetMusicParameter("LifeState", 1f);
+        }
+        else if (lives <= 0)
+        {
+            // Cambiar parámetro a música de horror
+            AudioManager.instance.SetMusicParameter("LifeState", 2f);
+            Debug.Log("Game Over!");
+            deathMenu.SetActive(true);
+            Time.timeScale = 0f; // Pausar el juego
+        }
+    }
 }

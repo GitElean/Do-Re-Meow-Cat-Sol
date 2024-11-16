@@ -12,13 +12,14 @@ public class PlayerController : MonoBehaviour
     private bool isJumping = false;   // Controla si el jugador está saltando
     private bool canDash = true;      // Controla si el jugador puede hacer dash
     public float dashCooldown = 0.2f;   // Tiempo de enfriamiento del dash (3 segundos)
-    public int lives = 3; //vidas del gato
 
-    //sonidos
+    // Sonidos
     [SerializeField] private EventReference moveSound;
     [SerializeField] private EventReference jumpSound;
     [SerializeField] private EventReference dashSound;
     [SerializeField] private EventReference hitSound;
+    [SerializeField] private EventReference deathSound;
+
     void Update()
     {
         HandleMovement();
@@ -34,23 +35,12 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Obstacle")) // Detectar colisión con un obstáculo
         {
-            TakeDamage();
             AudioManager.instance.PlayOneShot(hitSound, transform.position); // Reproducir el sonido de golpe
+            GameManager.instance.ReduceLife(); // Delegar reducción de vidas al GameManager
             Destroy(other.gameObject); // Destruir el obstáculo al colisionar
         }
     }
 
-    private void TakeDamage()
-    {
-        lives--;
-        Debug.Log("Vidas restantes: " + lives);
-
-        if (lives <= 0)
-        {
-            // Aquí podrías implementar lógica de Game Over
-            Debug.Log("Game Over!");
-        }
-    }
     void HandleMovement()
     {
         if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
@@ -92,7 +82,6 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        // Aquí permitimos el cambio en X sin importar si está en el aire
         Vector3 targetPosition = new Vector3(GameController.instance.lanes[currentLane].x, transform.position.y, transform.position.z);
         transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * moveSpeed);
     }
@@ -101,7 +90,6 @@ public class PlayerController : MonoBehaviour
     {
         isJumping = true;
 
-        // Elevar al jugador en el eje Y solamente
         float elapsedTime = 0;
         Vector3 originalPosition = transform.position;
         Vector3 targetPosition = new Vector3(transform.position.x, transform.position.y + jumpHeight, transform.position.z);
@@ -113,10 +101,9 @@ public class PlayerController : MonoBehaviour
             yield return null;
         }
 
-        // Bajar al jugador en el eje Y solamente
         elapsedTime = 0;
-        originalPosition = transform.position;  // Ahora la posición actual es el punto más alto
-        targetPosition = new Vector3(transform.position.x, 0, transform.position.z);  // Volver a y=0
+        originalPosition = transform.position;
+        targetPosition = new Vector3(transform.position.x, 0, transform.position.z);
 
         while (elapsedTime < jumpDuration / 2)
         {
@@ -127,7 +114,6 @@ public class PlayerController : MonoBehaviour
 
         isJumping = false;
     }
-
 
     IEnumerator DashCooldown()
     {

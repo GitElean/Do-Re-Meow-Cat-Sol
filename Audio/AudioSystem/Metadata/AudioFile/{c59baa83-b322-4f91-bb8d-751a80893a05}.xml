@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{c59baa83-b322-4f91-bb8d-751a80893a05}">
+		<property name="assetPath">
+			<value>Songs/Lo Furr/Lo Furr Power up MS.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>201</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e28812c5-bce8-4310-88a3-a1712f030d8a}</destination>
+		</relationship>
+	</object>
+</objects>
