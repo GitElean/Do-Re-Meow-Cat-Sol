@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{878214fa-621f-4605-8ebe-b9ca466fe878}">
+		<property name="color">
+			<value>Blue Light 1</value>
+		</property>
 		<property name="name">
 			<value>LineChange</value>
 		</property>
@@ -84,7 +87,7 @@
 	</object>
 	<object class="MultiSound" id="{20a76a87-da7c-43b2-b954-365c4031dff7}">
 		<relationship name="sounds">
-			<destination>{10153168-198f-44f4-b451-f081edcd75bb}</destination>
+			<destination>{6f207d30-d412-441a-a9c3-a95a0630b338}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{0022206f-72ff-4459-b419-e06df2f72005}">
@@ -99,9 +102,9 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{fe7aaee7-9f06-42ae-87c2-320d59ea7a5b}" />
-	<object class="SingleSound" id="{10153168-198f-44f4-b451-f081edcd75bb}">
+	<object class="SingleSound" id="{6f207d30-d412-441a-a9c3-a95a0630b338}">
 		<relationship name="audioFile">
-			<destination>{2cb2af5a-071a-463f-bd7c-69ff06d2936d}</destination>
+			<destination>{309eeed7-a927-40c6-82ef-f31b234a946a}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{b7f56c7c-5da2-4610-b1d0-37619a59fd7d}" />

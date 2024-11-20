@@ -20,7 +20,7 @@ MonoBehaviour:
     Data4: 2075907824
   Banks:
   - {fileID: -4486491546561017338}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
@@ -97,10 +97,10 @@ MonoBehaviour:
   Path: ../Audio/AudioSystem/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638672900237764737
+  lastModified: 638676514943119713
   FileSizes:
   - Name: Desktop
-    Value: 1164
+    Value: 1198
   Exists: 1
 --- !u!114 &-4486491546561017338
 MonoBehaviour:
@@ -117,7 +117,7 @@ MonoBehaviour:
   Path: ../Audio/AudioSystem/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638672910730311356
+  lastModified: 638676514944017728
   FileSizes:
   - Name: Desktop
     Value: 9891552
@@ -147,12 +147,13 @@ MonoBehaviour:
   - {fileID: -4580080516169522934}
   - {fileID: -5215852197458449280}
   - {fileID: 5015117105806223890}
+  - {fileID: 7062067974736831783}
   EditorParameters: []
   MasterBanks:
   - {fileID: 1066347079843222319}
   StringsBanks:
   - {fileID: -4546635234817485322}
-  cacheTime: 638672910730311356
+  cacheTime: 638676514944802206
   cacheVersion: 131620
 --- !u!114 &1066347079843222319
 MonoBehaviour:
@@ -169,7 +170,7 @@ MonoBehaviour:
   Path: ../Audio/AudioSystem/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638672900237754740
+  lastModified: 638676514943109745
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -267,11 +268,38 @@ MonoBehaviour:
   Path: ../Audio/AudioSystem/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638672903358904198
+  lastModified: 638676514944802206
   FileSizes:
   - Name: Desktop
-    Value: 108992
+    Value: 118368
   Exists: 1
+--- !u!114 &7062067974736831783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Win
+  m_EditorClassIdentifier: 
+  Path: event:/Win
+  Guid:
+    Data1: -1873865968
+    Data2: 1210153301
+    Data3: 248368282
+    Data4: -1318578367
+  Banks:
+  - {fileID: 6424479811683342625}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &8773084848183071869
 MonoBehaviour:
   m_ObjectHideFlags: 0

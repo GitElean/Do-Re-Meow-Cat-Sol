@@ -6,9 +6,10 @@ public class PauseMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public GameObject deathMenu;
+    public GameObject winMenu;
     void Start()
     {
-        
+        winMenu.SetActive(false);
         pauseMenu.SetActive(false);
         deathMenu.SetActive(false);
         GameManager.instance.isPaused = false;
@@ -33,6 +34,11 @@ public class PauseMenu : MonoBehaviour
         }
 
         if (GameManager.instance.death)
+        {
+            deathMenu.SetActive(true);
+        }
+
+        if (GameManager.instance.win)
         {
             deathMenu.SetActive(true);
         }

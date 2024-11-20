@@ -5,8 +5,7 @@ using UnityEngine;
 public class ObstacleRoutine : MonoBehaviour
 {
     public GameObject[] obstaclePrefabs; // Prefabs de los diferentes obstáculos
-    public int BPM = 120; // Velocidad de la canción en BPM
-    public float songDuration = 120f; // Duración de la canción en segundos
+    public int BPM = 120; // Velocidad de la canción en BPM // Duración de la canción en segundos
     public int maxObstaclesPerRow = 2; // Máximo de obstáculos por fila (para evitar llenar todos los carriles)
 
     private float timePerBeat;
@@ -16,7 +15,7 @@ public class ObstacleRoutine : MonoBehaviour
     {
         // Calcular el tiempo entre beats basado en los BPM
         timePerBeat = 60f / BPM;
-        totalBeats = Mathf.FloorToInt(songDuration / timePerBeat);
+        totalBeats = Mathf.FloorToInt(GameManager.instance.songDuration / timePerBeat);
 
         // Iniciar la rutina de generación de obstáculos
         StartCoroutine(GenerateObstaclesRoutine());

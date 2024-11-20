@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{e79a8acb-e41d-48a0-937d-5d2d84486c77}">
+		<property name="color">
+			<value>Blue Light 1</value>
+		</property>
 		<property name="name">
 			<value>Meow</value>
 		</property>
@@ -84,7 +87,6 @@
 	</object>
 	<object class="MultiSound" id="{fc75f36c-0c0e-4363-bc36-ba9822ad80fa}">
 		<relationship name="sounds">
-			<destination>{cbc52d77-d15f-420f-b36b-576f5e68cc17}</destination>
 			<destination>{1c5b385e-d95a-4237-8e71-54a58d0b55fb}</destination>
 		</relationship>
 	</object>
@@ -100,11 +102,6 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{c3c1ba24-ad51-4a75-a975-516239c02420}" />
-	<object class="SingleSound" id="{cbc52d77-d15f-420f-b36b-576f5e68cc17}">
-		<relationship name="audioFile">
-			<destination>{227f591a-1581-4b24-a629-c0eaf3c6ffb6}</destination>
-		</relationship>
-	</object>
 	<object class="SingleSound" id="{1c5b385e-d95a-4237-8e71-54a58d0b55fb}">
 		<relationship name="audioFile">
 			<destination>{b20080e9-b873-4d1f-91f9-3d187a925462}</destination>

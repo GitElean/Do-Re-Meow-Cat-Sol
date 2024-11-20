@@ -115,6 +115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5505427314701555205}
   - component: {fileID: 7921380912671594780}
+  - component: {fileID: 5835164350459966494}
   m_Layer: 0
   m_Name: Jumpable
   m_TagString: Obstacle
@@ -151,3 +152,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+--- !u!114 &5835164350459966494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8506131142124445028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f636ae92ce9a28b418eb9ffa172cefb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bpm: 80
+  pulseScale: 1.2
+  pulseDuration: 0.1

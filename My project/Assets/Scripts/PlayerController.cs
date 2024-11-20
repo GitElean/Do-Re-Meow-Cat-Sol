@@ -9,21 +9,28 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed = 5f;  // Velocidad de movimiento entre carriles
     public float jumpHeight = 2f; // Altura del salto
     public float jumpDuration = 0.5f; // Duración del salto (medio segundo)
-    private bool isJumping = false;   // Controla si el jugador está saltando
+   // private bool isJumping = false;   // Controla si el jugador está saltando
     private bool canDash = true;      // Controla si el jugador puede hacer dash
     public float dashCooldown = 0.2f;   // Tiempo de enfriamiento del dash (3 segundos)
 
     // Sonidos
     [SerializeField] private EventReference moveSound;
-    [SerializeField] private EventReference jumpSound;
-    [SerializeField] private EventReference dashSound;
+    [SerializeField] private EventReference winSound;
     [SerializeField] private EventReference hitSound;
     [SerializeField] private EventReference deathSound;
 
     void Update()
     {
         HandleMovement();
-        HandleJump();
+        //HandleJump();
+        if (GameManager.instance.win)
+        {
+            AudioManager.instance.PlayOneShot(winSound, transform.position);
+        }
+        if (GameManager.instance.death)
+        {
+            AudioManager.instance.PlayOneShot(winSound, transform.position);
+        }
     }
 
     private void PlaySound(EventReference sound)
@@ -50,14 +57,14 @@ public class PlayerController : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.LeftArrow) && currentLane > 1) // Dash a la izquierda
                 {
                     currentLane -= 2;
-                    PlaySound(dashSound); // Sonido de dash
-                    StartCoroutine(DashCooldown());
+                    //PlaySound(dashSound); // Sonido de dash
+                    //StartCoroutine(DashCooldown());
                 }
                 else if (Input.GetKeyDown(KeyCode.RightArrow) && currentLane < GameController.instance.lanes.Length - 2) // Dash a la derecha
                 {
                     currentLane += 2;
-                    PlaySound(dashSound); // Sonido de dash
-                    StartCoroutine(DashCooldown());
+                    //PlaySound(dashSound); // Sonido de dash
+                    //StartCoroutine(DashCooldown());
                 }
             }
         }
@@ -86,6 +93,8 @@ public class PlayerController : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * moveSpeed);
     }
 
+    
+    /*
     IEnumerator Jump()
     {
         isJumping = true;
@@ -129,5 +138,5 @@ public class PlayerController : MonoBehaviour
             PlaySound(jumpSound); // Sonido de salto
             StartCoroutine(Jump());
         }
-    }
+    }*/
 }

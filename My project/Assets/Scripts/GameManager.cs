@@ -8,7 +8,9 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public bool isPaused;
     public bool death;
+    public bool win;
     public EventReference levelSong; // Canción del nivel
+    public float songDuration = 120f;
     // public GameObject deathMenu;
     public int lives = 3;
 
@@ -29,24 +31,17 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // Reproducir la canción al inicio del nivel
-       
+        win = false;
+        lives = 3;
     }
 
     public void ReduceLife()
     {
         lives--;
-        Debug.Log("Vidas restantes: " + lives);
 
-        if (lives == 1)
-        {
-            // Cambiar parámetro a música intensa
-            AudioManager.instance.SetMusicParameter("LifeState", 0f);
-            
-        }
-        else if (lives <= 0)
+        if (lives <= 0)
         {
             // Cambiar parámetro a música de horror
-            Debug.Log("Game Over!");
             Time.timeScale = 0f; // Pausar el juego
             death = true;
         }
