@@ -9,8 +9,8 @@ public class MenuManager : MonoBehaviour
     public GameObject mainMenuPanel;
     public GameObject songSelectionPanel;
     public GameObject optionsPanel;
-    public GameObject controlsPanel; 
-    public GameObject soundPanel; 
+    //public GameObject controlsPanel; 
+    //public GameObject soundPanel; 
     public GameObject creditsPanel;
 
     void Start()
@@ -24,8 +24,8 @@ public class MenuManager : MonoBehaviour
         mainMenuPanel.SetActive(false);
         songSelectionPanel.SetActive(false);
         optionsPanel.SetActive(false);
-        controlsPanel.SetActive(false); // Empieza oculto
-        soundPanel.SetActive(false); // Empieza oculto
+        //controlsPanel.SetActive(false); // Empieza oculto
+        //soundPanel.SetActive(false); // Empieza oculto
         creditsPanel.SetActive(false);
     }
 
@@ -40,8 +40,8 @@ public class MenuManager : MonoBehaviour
         // Desactiva todos los paneles, asegurándose de que sólo el menú principal esté visible
         songSelectionPanel.SetActive(false);
         optionsPanel.SetActive(false);
-        controlsPanel.SetActive(false);
-        soundPanel.SetActive(false);
+        //controlsPanel.SetActive(false);
+        //soundPanel.SetActive(false);
         creditsPanel.SetActive(false);
 
         // Activa el menú principal
@@ -63,17 +63,17 @@ public class MenuManager : MonoBehaviour
     {
         mainMenuPanel.SetActive(false);
         optionsPanel.SetActive(true);
-        controlsPanel.SetActive(false); // Ocultamos los sub-paneles
-        soundPanel.SetActive(false);
+        //controlsPanel.SetActive(false); // Ocultamos los sub-paneles
+        //oundPanel.SetActive(false);
     }
 
     public void GoBackToOptions()
     {
-        controlsPanel.SetActive(false);
-        soundPanel.SetActive(false);
+        //controlsPanel.SetActive(false);
+        //soundPanel.SetActive(false);
         optionsPanel.SetActive(true); // Activa las opciones de nuevo
     }
-
+    /*
     public void ShowControls()
     {
         controlsPanel.SetActive(true); // Muestra los controles
@@ -84,7 +84,7 @@ public class MenuManager : MonoBehaviour
     {
         soundPanel.SetActive(true);    // Muestra el panel de sonido
         controlsPanel.SetActive(false); // Oculta el panel de controles por si está activo
-    }
+    }*/
 
     public void ShowCredits()
     {

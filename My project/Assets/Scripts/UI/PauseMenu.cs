@@ -14,6 +14,7 @@ public class PauseMenu : MonoBehaviour
         deathMenu.SetActive(false);
         GameManager.instance.isPaused = false;
         GameManager.instance.death = false;
+        GameManager.instance.lives = 3;
     }
 
     // Update is called once per frame
